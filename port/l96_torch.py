@@ -20,20 +20,39 @@ B = 10.0
 
 
 def coupling(Y, K=K, J=J, h=H, c=C, b=B):
-    raise NotImplementedError("Задание 1: перенеси coupling из reference/l96_numpy.py")
+    return -(h * c / b) * Y.reshape(*Y.shape[:-1], K, J).sum(dim=-1)
 
 
 def rhs_x(X, Y, F=F, K=K, J=J, h=H, c=C, b=B):
-    raise NotImplementedError("Задание 1: перенеси rhs_x")
+    adv = -torch.roll(X, 1, dims=-1) * (torch.roll(X, 2, dims=-1) - torch.roll(X, -1, dims=-1))
+    return adv - X + F + coupling(Y, K, J, h, c, b)
 
 
 def rhs_y(X, Y, K=K, J=J, h=H, c=C, b=B):
-    raise NotImplementedError("Задание 1: перенеси rhs_y")
+    adv = -c * b * torch.roll(Y, -1, dims=-1) * (torch.roll(Y, -2, dims=-1) - torch.roll(Y, 1, dims=-1))
+    return adv - c * Y + (h * c / b) * torch.repeat_interleave(X, J, dim=-1)
 
 
 def rk4_step(X, Y, dt, F=F, K=K, J=J, h=H, c=C, b=B):
-    raise NotImplementedError("Задание 1: перенеси rk4_step")
+    """Один шаг метода Рунге–Кутты 4-го порядка для всей системы."""
+    def f(X, Y):
+        return rhs_x(X, Y, F, K, J, h, c, b), rhs_y(X, Y, K, J, h, c, b)
+
+    k1x, k1y = f(X, Y)
+    k2x, k2y = f(X + 0.5 * dt * k1x, Y + 0.5 * dt * k1y)
+    k3x, k3y = f(X + 0.5 * dt * k2x, Y + 0.5 * dt * k2y)
+    k4x, k4y = f(X + dt * k3x, Y + dt * k3y)
+    X_new = X + dt / 6 * (k1x + 2 * k2x + 2 * k3x + k4x)
+    Y_new = Y + dt / 6 * (k1y + 2 * k2y + 2 * k3y + k4y)
+    return X_new, Y_new
 
 
 def integrate(X0, Y0, dt, n_steps, **params):
-    raise NotImplementedError("Задание 1: перенеси integrate (возвращает тензоры (n+1, K) и (n+1, K*J))")
+    """Траектории формы (n_steps + 1, ..., K) и (n_steps + 1, ..., K*J)."""
+    Xs, Ys = [X0], [Y0]
+    X, Y = X0, Y0
+    for _ in range(n_steps):
+        X, Y = rk4_step(X, Y, dt, **params)
+        Xs.append(X)
+        Ys.append(Y)
+    return torch.stack(Xs), torch.stack(Ys)
