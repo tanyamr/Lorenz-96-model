@@ -1,0 +1,27 @@
+seed: 42
+epochs: 10
+batch_size: 256
+lr: 0.001
+train_fraction: 0.8
+train_stride: 5
+dtype: float64
+threads: 1
+data: hybrid/data.npz
+forecast_seed: 45
+forecast_batch: 20
+burn_in: 5000
+forecast_steps: 2000
+dt: 0.001
+name: rollout
+hidden_sizes:
+- 32
+- 32
+activation: tanh
+offsets:
+- 0
+horizon: 100
+window_stride: 400
+rollout_epochs: 5
+rollout_lr: 0.0001
+rollout_batch: 32
+grad_clip: 1.0
