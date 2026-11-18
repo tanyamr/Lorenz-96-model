@@ -1,0 +1,337 @@
+{
+  "training_runs": 10,
+  "selection_seed": 45,
+  "final_seed": 46,
+  "metric": "mean RMSE for t=(0,1]",
+  "winner": "run_03",
+  "runs": [
+    {
+      "name": "run_01",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "horizon": 50,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_01.pt",
+        "metrics": "results/depth/run_01.json"
+      },
+      "selection_score": 0.7326103704414306,
+      "selected_epoch": 7,
+      "selection_rmse_t1": 2.094766335131654
+    },
+    {
+      "name": "run_02",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.001,
+        "horizon": 50,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_02.pt",
+        "metrics": "results/depth/run_02.json"
+      },
+      "selection_score": 0.7358328887301542,
+      "selected_epoch": 2,
+      "selection_rmse_t1": 2.0493354086710864
+    },
+    {
+      "name": "run_03",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "horizon": 100,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_03.pt",
+        "metrics": "results/depth/run_03.json"
+      },
+      "selection_score": 0.7321469651915313,
+      "selected_epoch": 7,
+      "selection_rmse_t1": 2.1171503578648387
+    },
+    {
+      "name": "run_04",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.001,
+        "horizon": 100,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_04.pt",
+        "metrics": "results/depth/run_04.json"
+      },
+      "selection_score": 0.733621916355005,
+      "selected_epoch": 2,
+      "selection_rmse_t1": 2.068663113749058
+    },
+    {
+      "name": "run_05",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "horizon": 200,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_05.pt",
+        "metrics": "results/depth/run_05.json"
+      },
+      "selection_score": 0.7557758137531467,
+      "selected_epoch": 9,
+      "selection_rmse_t1": 2.243407450691833
+    },
+    {
+      "name": "run_06",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.001,
+        "horizon": 200,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_06.pt",
+        "metrics": "results/depth/run_06.json"
+      },
+      "selection_score": 0.7502841652066056,
+      "selected_epoch": 10,
+      "selection_rmse_t1": 2.210317730363854
+    },
+    {
+      "name": "run_07",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "horizon": 400,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_07.pt",
+        "metrics": "results/depth/run_07.json"
+      },
+      "selection_score": 0.7647356594599203,
+      "selected_epoch": 6,
+      "selection_rmse_t1": 2.279599962763694
+    },
+    {
+      "name": "run_08",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 42,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.001,
+        "horizon": 400,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_08.pt",
+        "metrics": "results/depth/run_08.json"
+      },
+      "selection_score": 0.7526992899745425,
+      "selected_epoch": 10,
+      "selection_rmse_t1": 2.214790619579913
+    },
+    {
+      "name": "run_09",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 43,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "horizon": 100,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_09.pt",
+        "metrics": "results/depth/run_09.json"
+      },
+      "selection_score": 0.7324800494287336,
+      "selected_epoch": 9,
+      "selection_rmse_t1": 2.1242838419366112
+    },
+    {
+      "name": "run_10",
+      "config": {
+        "mode": "rollout",
+        "hidden_sizes": [
+          32,
+          32
+        ],
+        "seed": 44,
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "horizon": 100,
+        "stride": 400,
+        "grad_clip": 1.0,
+        "train_fraction": 0.8,
+        "threads": 1,
+        "data": "hybrid/data.npz",
+        "initialization": "results/breadth/control.pt",
+        "checkpoint": "results/depth/run_10.pt",
+        "metrics": "results/depth/run_10.json"
+      },
+      "selection_score": 0.7306733129672383,
+      "selected_epoch": 4,
+      "selection_rmse_t1": 2.124440673463468
+    }
+  ],
+  "final": {
+    "control": {
+      "mean_rmse_0_to_1": 0.8829645730298511,
+      "rmse": {
+        "0.1": 0.13529715239700613,
+        "0.5": 0.7367033436923545,
+        "1.0": 2.4473280629341283,
+        "2.0": 4.918031895536602
+      }
+    },
+    "breadth_rollout": {
+      "mean_rmse_0_to_1": 0.8988552009790346,
+      "rmse": {
+        "0.1": 0.13651927507815237,
+        "0.5": 0.7438998109828242,
+        "1.0": 2.540525196161268,
+        "2.0": 5.334169744754988
+      }
+    },
+    "previous_supervised": {
+      "mean_rmse_0_to_1": 0.8780010733077872,
+      "rmse": {
+        "0.1": 0.13504431045213644,
+        "0.5": 0.7191668860487289,
+        "1.0": 2.540058755016864,
+        "2.0": 4.9058974001632
+      }
+    },
+    "run_03": {
+      "mean_rmse_0_to_1": 0.900833794674368,
+      "rmse": {
+        "0.1": 0.13668943574345246,
+        "0.5": 0.744610586375674,
+        "1.0": 2.552272746720147,
+        "2.0": 5.229879913164945
+      }
+    },
+    "run_09": {
+      "mean_rmse_0_to_1": 0.8964219770000067,
+      "rmse": {
+        "0.1": 0.13648477939063797,
+        "0.5": 0.741755738542783,
+        "1.0": 2.5303112677156374,
+        "2.0": 5.38435732176674
+      }
+    },
+    "run_10": {
+      "mean_rmse_0_to_1": 0.8988129539341764,
+      "rmse": {
+        "0.1": 0.13682898751816652,
+        "0.5": 0.7425543968587794,
+        "1.0": 2.5427360700074826,
+        "2.0": 5.291706499901178
+      }
+    }
+  },
+  "protocol": {
+    "batch": 20,
+    "burn_in": 5000,
+    "steps": 2000,
+    "dt": 0.001,
+    "K": 8,
+    "J": 32,
+    "F": 20,
+    "h": 1,
+    "c": 10,
+    "b": 10
+  }
+}

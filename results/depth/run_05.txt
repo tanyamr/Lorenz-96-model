@@ -1,0 +1,49 @@
+Epoch 1: validation trajectory RMSE=0.14155933
+Epoch 2: validation trajectory RMSE=0.14119374
+Epoch 3: validation trajectory RMSE=0.14102627
+Epoch 4: validation trajectory RMSE=0.14111522
+Epoch 5: validation trajectory RMSE=0.14114355
+Epoch 6: validation trajectory RMSE=0.14112988
+Epoch 7: validation trajectory RMSE=0.14106340
+Epoch 8: validation trajectory RMSE=0.14106520
+Epoch 9: validation trajectory RMSE=0.14093954
+Epoch 10: validation trajectory RMSE=0.14096607
+{
+  "seed": 42,
+  "horizon": 200,
+  "stride": 400,
+  "dt": 0.001,
+  "epochs": 10,
+  "batch_size": 32,
+  "lr": 0.0001,
+  "grad_clip": 1.0,
+  "train_windows": 90,
+  "validation_windows": 22,
+  "initialization": "results/breadth/control.pt",
+  "best_epoch": 9,
+  "baseline_validation_rollout_rmse": 0.14190094794514868,
+  "validation_rollout_rmse": 0.14093954486907428,
+  "validation_coupling_rmse": 1.76866913613358,
+  "dtype": "float64",
+  "threads": 1,
+  "config": {
+    "mode": "rollout",
+    "hidden_sizes": [
+      32,
+      32
+    ],
+    "seed": 42,
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "horizon": 200,
+    "stride": 400,
+    "grad_clip": 1.0,
+    "train_fraction": 0.8,
+    "threads": 1,
+    "data": "hybrid/data.npz",
+    "initialization": "results/breadth/control.pt",
+    "checkpoint": "results/depth/run_05.pt",
+    "metrics": "results/depth/run_05.json"
+  }
+}

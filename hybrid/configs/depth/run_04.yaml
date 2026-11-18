@@ -1,0 +1,17 @@
+mode: rollout
+hidden_sizes:
+- 32
+- 32
+seed: 42
+epochs: 10
+batch_size: 32
+lr: 0.001
+horizon: 100
+stride: 400
+grad_clip: 1.0
+train_fraction: 0.8
+threads: 1
+data: hybrid/data.npz
+initialization: results/breadth/control.pt
+checkpoint: results/depth/run_04.pt
+metrics: results/depth/run_04.json
